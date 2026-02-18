@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Grid Gallery</title>
+
+<style>
+    /* ===== Reset ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* ===== Body Styles ===== */
+    body {
+        font-family: "Nabla", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "EDPT" 100, "EHLT" 12;
+        background-color: #f0f0f0;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 30px 0;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    /* ===== Gallery Grid ===== */
+    .gallery {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        aspect-ratio: 16/9; /* responsive height */
+        object-fit: cover;
+        border-radius: 12px;
+        cursor: pointer;
+
+        /* Animation */
+        opacity: 0;
+        transform: scale(0.95);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 0.5s forwards;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Staggered animation delay */
+    .gallery img:nth-child(1)  { animation-delay: 0.1s; }
+    .gallery img:nth-child(2)  { animation-delay: 0.2s; }
+    .gallery img:nth-child(3)  { animation-delay: 0.3s; }
+    .gallery img:nth-child(4)  { animation-delay: 0.4s; }
+    .gallery img:nth-child(5)  { animation-delay: 0.5s; }
+    .gallery img:nth-child(6)  { animation-delay: 0.6s; }
+    .gallery img:nth-child(7)  { animation-delay: 0.7s; }
+    .gallery img:nth-child(8)  { animation-delay: 0.8s; }
+    .gallery img:nth-child(9)  { animation-delay: 0.9s; }
+    .gallery img:nth-child(10) { animation-delay: 1s; }
+    .gallery img:nth-child(11) { animation-delay: 1.1s; }
+    .gallery img:nth-child(12) { animation-delay: 1.2s; }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* ===== Mobile Adjustments ===== */
+    @media (max-width: 600px) {
+        .gallery {
+            gap: 10px;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+    <h1>My Grid Gallery</h1>
+
+    <div class="gallery">
+        <img src="https://picsum.photos/500/300?random=1" alt="Gallery Image 1">
+        <img src="https://picsum.photos/500/300?random=2" alt="Gallery Image 2">
+        <img src="https://picsum.photos/500/300?random=3" alt="Gallery Image 3">
+        <img src="https://picsum.photos/500/300?random=4" alt="Gallery Image 4">
+        <img src="https://picsum.photos/500/300?random=5" alt="Gallery Image 5">
+        <img src="https://picsum.photos/500/300?random=6" alt="Gallery Image 6">
+        <img src="https://picsum.photos/500/300?random=7" alt="Gallery Image 7">
+        <img src="https://picsum.photos/500/300?random=8" alt="Gallery Image 8">
+        <img src="https://picsum.photos/500/300?random=9" alt="Gallery Image 9">
+        <img src="https://picsum.photos/500/300?random=10" alt="Gallery Image 10">
+        <img src="https://picsum.photos/500/300?random=11" alt="Gallery Image 11">
+        <img src="https://picsum.photos/500/300?random=12" alt="Gallery Image 12">
+    </div>
+</body>
+</html>
